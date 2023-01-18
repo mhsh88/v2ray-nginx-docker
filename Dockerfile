@@ -37,8 +37,9 @@ COPY docker-conf/config.json /etc/v2ray/config.json
 RUN set -ex && \
   apk update && \
   apk --no-cache add ca-certificates \
-  nginx \
-  supervisor && \
+  nginx \  
+  supervisor \
+  tor && \
   rm -rf /var/cache/apk/* && \
   mkdir /var/log/v2ray/ &&\
   chmod +x /usr/bin/v2ray/v2ctl && \
